@@ -16,6 +16,7 @@
 <script>
 import Todo from "./Todo";
 import CreateTodo from "./CreateTodo";
+import sweetalert from "sweetalert";
 export default {
   components: {
     Todo,
@@ -34,7 +35,6 @@ export default {
     deleteTodo(todo) {
       let todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
-      sweetalert("Deleted!", "Your To-Do has been deleted.", "success");
     }
   }
 };
