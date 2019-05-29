@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <h4>
-      <i class="calendar check outline icon"></i> Todo Extension
+      <i class="calendar check outline icon" style="color: #1976d2;"></i> Todo Extension
     </h4>
     <div>
       <div v-for="(todo, index) in todos" :key="index">

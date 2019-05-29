@@ -2,10 +2,15 @@
   <!-- Show todo item if isEditing = false -->
   <div class="todo">
     <div v-show="!isEditing" class="todo-content">
-      <span class="material-icon" v-show="!showDoneIcon" @mouseover="toggleStatusIcon">
+      <span
+        class="material-icon"
+        v-show="!showDoneIcon"
+        @click="deleteTodo(todo)"
+        @mouseover="toggleStatusIcon"
+      >
         <vue-material-icon name="radio_button_unchecked" :size="22"></vue-material-icon>&nbsp;
       </span>
-      <span class="material-icon" v-show="showDoneIcon">
+      <span class="material-icon" v-show="showDoneIcon" @click="deleteTodo(todo)">
         <vue-material-icon name="check_circle" :size="22"></vue-material-icon>&nbsp;
       </span>
       <span @click="showEditForm">{{ todo.title }}</span>
