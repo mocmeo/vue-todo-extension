@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TodoList :todos="todos"/>
+    <TodoList :todos="todos" :updateStorage="updateStorage"/>
   </div>
 </template>
 
@@ -13,26 +13,36 @@ export default {
       todos: [
         {
           title: "Todo A",
-          description: "For project A",
-          done: true
-        },
-        {
-          title: "Todo B",
-          description: "For project B",
-          done: false
-        },
-        {
-          title: "Todo C",
-          description: "For project C",
+          description: "Project A",
           done: false
         }
       ]
     };
   },
+  methods: {
+    init() {
+      chrome.storage.sync.get(({ todos }) => {
+        if (!todos) return;
+
+        console.log("get todo");
+        this.todos = todos;
+      });
+    },
+    updateStorage() {
+      chrome.storage.sync.set({ todos: this.todos });
+    }
+  },
   components: {
     TodoList
+  },
+  created() {
+    this.init();
   }
 };
 </script>
 <style>
+.material-icon {
+  top: 3px;
+  position: relative;
+}
 </style>

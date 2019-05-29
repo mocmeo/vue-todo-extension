@@ -1,11 +1,13 @@
 <template>
   <b-container>
-    <h4>VueJS Todo Extension</h4>
-    <ul>
-      <li v-for="(todo, index) in todos" :key="index">
+    <h4>
+      <i class="calendar check outline icon"></i> Todo Extension
+    </h4>
+    <div>
+      <div v-for="(todo, index) in todos" :key="index">
         <Todo :todo="todo" @delete-todo="deleteTodo"/>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <div>
       <CreateTodo @create-todo="addTodo"/>
@@ -22,7 +24,10 @@ export default {
     Todo,
     CreateTodo
   },
-  props: ["todos"],
+  props: {
+    todos: Array,
+    updateStorage: Function
+  },
   data() {
     return {
       isCreating: false
@@ -31,24 +36,23 @@ export default {
   methods: {
     addTodo(todo) {
       this.todos.push(todo);
+      this.updateStorage();
+      sweetalert("Created!", "Your To-Do has been created.", "success");
     },
     deleteTodo(todo) {
       let todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
+      this.updateStorage();
+      sweetalert("Deleted!", "Your To-Do has been deleted.", "success");
     }
   }
 };
 </script>
-
 <style>
-.add-todo {
-  margin: 15px;
-}
-
-.add-todo:hover {
-  color: #ff9800;
-  cursor: pointer;
+.todo-options {
+  margin-top: 5px !important;
 }
 </style>
+
 
 

@@ -1,11 +1,20 @@
 <template>
-  <div>
-    <span class="add-todo" @click="openForm" v-show="!isCreating">
-      <span style="color:#ff9800">+</span> Add Task
-    </span>
+  <div class="create-todo">
+    <div v-show="!isCreating">
+      <span class="add-todo" @click="openForm">
+        <span style="color:#1976D2" class="material-icon">
+          <vue-material-icon name="add" :size="22"/>
+        </span> Add Task&nbsp;
+      </span>
+
+      <span class="add-website-todo">Add website as task</span>
+    </div>
 
     <div v-show="isCreating">
-      <h4>Add Todo</h4>
+      <h5>
+        <i class="pencil alternate icon"></i>
+        <i>Add Todo</i>
+      </h5>
       <div class="ui icon input">
         <input type="text" v-model="title" placeholder="Title..">
         <i class="tags icon"></i>
@@ -17,8 +26,10 @@
         <i class="tags icon"></i>
       </div>
       <br>
-      <button @click="sendForm" class="ui primary button">Add</button>
-      <span @click="closeForm" class="btn-cancel">Cancel</span>
+      <div class="todo-options">
+        <button @click="sendForm" class="ui primary button">Add</button>&nbsp;
+        <span @click="closeForm" class="btn-cancel">Cancel</span>
+      </div>
     </div>
   </div>
 </template>
@@ -56,4 +67,23 @@ export default {
   }
 };
 </script>
+<style scoped>
+.add-todo:hover {
+  color: #1976d2;
+  cursor: pointer;
+}
+
+.add-website-todo {
+  color: #1976d2;
+}
+
+.add-website-todo:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.create-todo {
+  margin-left: 5px !important;
+}
+</style>
 

@@ -13,10 +13,6 @@ module.exports = {
                     to: path.resolve(__dirname, "./dist/images")
                 },
                 {
-                    from: path.resolve(__dirname, "./template/css"),
-                    to: path.resolve(__dirname, "./dist/css")
-                },
-                {
                     from: path.resolve(__dirname, "./template/js"),
                     to: path.resolve(__dirname, "./dist/js")
                 }
