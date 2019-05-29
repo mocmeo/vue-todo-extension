@@ -10,7 +10,12 @@
       >
         <vue-material-icon name="radio_button_unchecked" :size="22"></vue-material-icon>&nbsp;
       </span>
-      <span class="material-icon" v-show="showDoneIcon" @click="deleteTodo(todo)">
+      <span
+        class="material-icon"
+        v-show="showDoneIcon"
+        style="color: #1976d2;"
+        @click="deleteTodo(todo)"
+      >
         <vue-material-icon name="check_circle" :size="22"></vue-material-icon>&nbsp;
       </span>
       <span @click="showEditForm">{{ todo.title }}</span>
@@ -82,7 +87,7 @@ hr.break-line {
 }
 
 .todo-content {
-  margin-bottom: 7px !important;
+  margin-bottom: 3.5px !important;
 }
 </style>
 

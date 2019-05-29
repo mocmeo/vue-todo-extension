@@ -10,13 +10,7 @@ export default {
   name: "app",
   data() {
     return {
-      todos: [
-        {
-          title: "Todo A",
-          description: "Project A",
-          done: false
-        }
-      ]
+      todos: []
     };
   },
   methods: {

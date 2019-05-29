@@ -1,17 +1,25 @@
 <template>
-  <b-container>
-    <h4>
-      <i class="calendar check outline icon" style="color: #1976d2;"></i> Todo Extension
-    </h4>
-    <div>
-      <div v-for="(todo, index) in todos" :key="index">
-        <Todo :todo="todo" @delete-todo="deleteTodo"/>
-      </div>
-    </div>
-
-    <div>
-      <CreateTodo @create-todo="addTodo"/>
-    </div>
+  <b-container class="top-container">
+    <b-card-group deck>
+      <b-card header-tag="header">
+        <h4 slot="header" class="mb-0">
+          <i class="calendar check outline icon" style="color: #1976d2;"></i> Todo App
+        </h4>
+        <div>
+          <h5>
+            <u>
+              <i>Today:</i>
+            </u>
+          </h5>
+          <div v-for="(todo, index) in todos" :key="index">
+            <Todo :todo="todo" @delete-todo="deleteTodo"/>
+          </div>
+          <div>
+            <CreateTodo @create-todo="addTodo"/>
+          </div>
+        </div>
+      </b-card>
+    </b-card-group>
   </b-container>
 </template>
 
@@ -51,6 +59,14 @@ export default {
 <style>
 .todo-options {
   margin-top: 5px !important;
+}
+
+.top-container {
+  background-color: #fff !important;
+  margin: 15px !important;
+  padding: 0 !important;
+  border-radius: 5px;
+  width: 400px !important;
 }
 </style>
 
