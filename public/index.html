@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/semantic.min.js"></script>
+		<script src="js/sweetalert.min.js"></script>
+		<link rel="stylesheet" href="text/css" href="css/reset.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"
+		/>
+		<title>vue-todo-extension</title>
+		<style>
+			body {
+				padding: 15px;
+				width: 500px;
+				height: auto;
+				background-image: url("images/background.jpg") !important;
+				background-repeat: no-repeat, repeat;
+			}
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/semantic.min.js"></script>
-  <script src="js/sweetalert.min.js"></script>
-  <link rel="stylesheet" href="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
-  <title>vue-todo-extension</title>
-  <style>
-    body {
-      padding: 15px;
-      width: 470px;
-      height: auto;
-      background-image: url('images/background.jpg') !important;
-      background-repeat: no-repeat, repeat;
-    }
+			* {
+				margin: 0 !important;
+			}
+		</style>
+	</head>
 
-    * {
-      margin: 0 !important;
-    }
-  </style>
-</head>
-
-<body>
-  <noscript>
-    <strong>We're sorry but vue-todo-extension doesn't work properly without JavaScript enabled. Please enable it to
-      continue.</strong>
-  </noscript>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
-</body>
-
+	<body>
+		<noscript>
+			<strong
+				>We're sorry but vue-todo-extension doesn't work properly without
+				JavaScript enabled. Please enable it to continue.</strong
+			>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+	</body>
 </html>
